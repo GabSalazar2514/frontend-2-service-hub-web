@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="cuerpo-login">
+        <div class="contenedor-login">
+            <div class="tarjeta-login">
+                <!-- Título principal -->
+                <h2 class="titulo-login">Login to ServiceHub</h2>
+                
+                <!-- Formulario de login -->
+                <form id="formularioLogin" class="formulario-login">
+                    <!-- Campo usuario -->
+                    <div class="grupo-campo">
+                        <label for="usuario" class="etiqueta-campo">Username</label>
+                        <input 
+                            type="text" 
+                            id="usuario" 
+                            name="usuario" 
+                            class="campo-entrada" 
+                            placeholder="Enter your username"
+                            required
+                            autocomplete="username"
+                        >
+                    </div>
+
+                    <!-- Campo contraseña -->
+                    <div class="grupo-campo">
+                        <label for="contrasena" class="etiqueta-campo">Password</label>
+                        <input 
+                            type="password" 
+                            id="contrasena" 
+                            name="contrasena" 
+                            class="campo-entrada" 
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+                    <!-- Enlace de recuperación -->
+                    <div class="grupo-enlaces">
+                        <!-- <a href="#" class="enlace-olvido" onclick="mostrarRecuperacion(); return false;"> -->
+                        <a href="#" class="enlace-olvido">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <!-- Botón de login -->
+                    <button type="submit" class="boton-login" data-texto-original="Login">
+                        Login
+                    </button>
+                </form>
+
+                <!-- Enlace de regreso -->
+                <div class="enlace-regreso">
+                    <a href="../index.html" class="enlace-inicio">Return to Home Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de recuperación de contraseña -->
+    <div id="modalRecuperacion" class="modal-recuperacion oculto">
+        <div class="contenido-modal">
+            <h2 class="titulo-modal">Password Recovery</h2>
+            <p class="texto-modal">
+                Enter your email address and we'll send you instructions to reset your password.
+            </p>
+            
+            <div class="grupo-campo">
+                <label for="emailRecuperacion" class="etiqueta-campo">Email Address</label>
+                <input 
+                    type="email" 
+                    id="emailRecuperacion" 
+                    class="campo-entrada" 
+                    placeholder="Enter your email address"
+                    required
+                >
+            </div>
+
+            <div class="botones-modal">
+                <button type="button" class="boton-enviar" onclick="enviarRecuperacion()">
+                    Send
+                </button>
+                <button type="button" class="boton-cancelar" onclick="cerrarModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/login.js"></script>
+</body>
+</html>

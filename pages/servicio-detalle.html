@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Cleaning Service - ServiceHub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+        <header class="encabezado-principal">
+        <div class="contenedor-navegacion">
+            <div class="logo">
+                <span class="icono-logo"></span>
+                ServiceHub
+            </div>
+            <nav class="navegacion-principal">
+                <a href="../index.html" class="enlace-navegacion">Home</a>
+                <a href="../pages/servicios.html" class="enlace-navegacion">Service List</a>
+                <a href="#" class="enlace-navegacion">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Contenido principal -->
+    <main class="contenido-servicio">
+        <div class="contenedor-detalle">
+            <!-- Información del servicio -->
+            <div class="informacion-servicio">
+                <!-- Imagen del servicio -->
+                <div class="imagen-servicio-grande">
+                    <!-- La imagen se genera con CSS y JavaScript -->
+                </div>
+
+                <!-- Título y descripción -->
+                <h2 class="titulo-servicio-detalle"></h2>
+                <p class="descripcion-detallada"></p>
+            </div>
+
+            <!-- Panel lateral -->
+            <aside class="panel-lateral">
+                <!-- Sección de precios -->
+                <div class="seccion-precios">
+                    <h3 class="titulo-precios">Pricing</h3>
+                    <div class="opciones-precios">
+                        <!-- Paquete estándar -->
+                        <div class="opcion-precio seleccionada">
+                            <input type="radio" id="estandar" name="paquete" value="estandar" checked>
+                            <label for="estandar">Standard Package</label>
+                            <span class="precio-paquete"></span>
+                        </div>
+
+                        <!-- Paquete premium -->
+                        <div class="opcion-precio">
+                            <input type="radio" id="premium" name="paquete" value="premium">
+                            <label for="premium">Premium Package</label>
+                            <span class="precio-paquete"></span>
+                        </div>
+                    </div>
+
+                    <!-- Botón de solicitud -->
+                    <button class="boton-solicitar" onclick="solicitarServicio()">
+                        Request Service
+                    </button>
+                </div>
+
+                <!-- Sección de reseñas -->
+                <div class="seccion-resenas">
+                    <h3 class="titulo-resenas">User Reviews</h3>
+                    <div class="lista-resenas">
+                        <div class="resena">
+                            <p class="texto-resena">"Excellent service, very thorough and professional!"</p>
+                            <p class="autor-resena">- Alex Jenkins</p>
+                        </div>
+                        <div class="resena">
+                            <p class="texto-resena">"Highly recommend! The team was punctual and efficient."</p>
+                            <p class="autor-resena">- Sarah Connor</p>
+                        </div>
+                        <div class="resena">
+                            <p class="texto-resena">"My space has never looked better. Great value!"</p>
+                            <p class="autor-resena">- Michael Tan</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div id="modalConfirmacion" class="modal-confirmacion oculto">
+        <div class="contenido-modal">
+            <h3 class="titulo-modal">Confirm Service Request</h3>
+            <p>Please review your service details:</p>
+            
+            <div id="detallesServicio" class="detalles-confirmacion">
+                <!-- Los detalles se llenan dinámicamente -->
+            </div>
+
+            <div class="botones-modal">
+                <button class="boton-confirmar" onclick="confirmarSolicitud()">
+                    Confirm
+                </button>
+                <button class="boton-cancelar" onclick="cerrarModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/servicio-detalle.js"></script>
+</body>
+</html>

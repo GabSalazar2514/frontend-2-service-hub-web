@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header class="encabezado-principal">
+        <div class="contenedor-navegacion">
+            <div class="logo">
+                <span class="icono-logo"></span>
+                ServiceHub
+            </div>
+            <nav class="navegacion-principal">
+                <a href="pages/login.html" class="enlace-navegacion">Login</a>
+                <a href="pages/servicios.html" class="enlace-navegacion">Service List</a>
+                <a href="#" class="enlace-navegacion">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección principal de bienvenida -->
+    <main class="contenido-principal">
+        <section class="seccion-bienvenida">
+            <h1 class="titulo-principal">Welcome to ServiceHub</h1>
+            <p class="descripcion-principal">
+                Explore our wide range of services designed to cater to your specific needs. 
+                Whether you're looking for professional assistance or day-to-day support, 
+                ServiceHub has got you covered.
+            </p>
+            <button class="boton-registro" onclick="navegarAServicios()">Sign Up for Services</button>
+        </section>
+
+        <!-- Sección de categorías de servicios -->
+        <section class="seccion-servicios">
+            <div class="contenedor-servicios">
+                <!-- Servicio Profesional -->
+                <div class="tarjeta-servicio">
+                    <div class="imagen-servicio imagen-profesional"></div>
+                    <h3 class="titulo-servicio">Professional Services</h3>
+                    <p class="descripcion-servicio">
+                        From consulting to implementation, our team is here to help you succeed.
+                    </p>
+                </div>
+
+                <!-- Servicios del Hogar -->
+                <div class="tarjeta-servicio">
+                    <div class="imagen-servicio imagen-hogar"></div>
+                    <h3 class="titulo-servicio">Home Services</h3>
+                    <p class="descripcion-servicio">
+                        Keep your home in top shape with our reliable maintenance and repair services.
+                    </p>
+                </div>
+
+                <!-- Soporte al Cliente -->
+                <div class="tarjeta-servicio">
+                    <div class="imagen-servicio imagen-soporte"></div>
+                    <h3 class="titulo-servicio">Customer Support</h3>
+                    <p class="descripcion-servicio">
+                        Our dedicated support team is always ready to assist you with any queries.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="contenedor-pie">
+            <div class="enlaces-rapidos">
+                <h3>Quick Links</h3>
+                <ul class="lista-enlaces">
+                    <li><a href="#" class="enlace-pie">Contact Us</a></li>
+                    <li><a href="#" class="enlace-pie">Privacy Policy</a></li>
+                    <li><a href="#" class="enlace-pie">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="redes-sociales">
+                <h3>Connect with Us</h3>
+                <div class="iconos-redes">
+                    <span class="icono-red"><img src="assets/facebook.svg" alt="Facebook" width="30"></span>
+                    <span class="icono-red"><img src="assets/twitter.svg" alt="Twitter" width="30"></span>
+                    <span class="icono-red"><img src="assets/linkedin.svg" alt="Linkedin" width="30"></span>
+                </div>
+            </div>
+        </div>
+        <div class="derechos-autor">
+            © 2023 ServiceHub. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

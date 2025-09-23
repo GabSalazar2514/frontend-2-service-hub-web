@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Services</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="encabezado-servicios">
+        <div class="contenido-servicios">
+            <h2 class="titulo-pagina"><a href="../index.html">ServiceHub</a></h2>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido-servicios">
+        <!-- Sección de búsqueda -->
+        <section class="seccion-busqueda">
+            <div class="contenedor-busqueda">
+                <!-- Campo de búsqueda -->
+                <input 
+                    type="text" 
+                    id="campoBusqueda" 
+                    class="campo-busqueda" 
+                    placeholder="Search services..."
+                    autocomplete="off"
+                >
+                
+                <!-- Filtros de categoría -->
+                <div class="filtros-categoria">
+                    <button class="boton-filtro activo">All</button>
+                    <button class="boton-filtro">Category 1</button>
+                    <button class="boton-filtro">Category 2</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid de servicios -->
+        <section class="grid-servicios" id="gridServicios">
+            <!-- Los servicios se renderizan dinámicamente aquí -->
+        </section>
+
+        <!-- Mensaje cuando no hay resultados -->
+        <div id="mensajeVacio" class="mensaje-vacio oculto">
+            <p>No services found matching your criteria.</p>
+            <p>Try adjusting your search or filters.</p>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina-servicios">
+        <div class="contenido-servicios">
+            <p>&copy; 2023 ServiceHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/servicios.js"></script>
+</body>
+</html>

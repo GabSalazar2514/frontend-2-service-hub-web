@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub Admin Panel</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Encabezado de administración -->
+        <header class="encabezado-principal">
+        <div class="contenedor-navegacion">
+            <div class="logo">
+                <span class="icono-logo"></span>
+                ServiceHub
+            </div>
+            <nav class="navegacion-principal">
+                <a href="../index.html" class="enlace-navegacion activo">Dashboard</a>
+                <a href="../pages/servicios.html" class="enlace-navegacion">Services</a>
+                <a href="#" class="enlace-navegacion">Users</a>
+                <a href="#" class="enlace-navegacion">Settings</a>
+                <a href="../pages/login.html" class="enlace-navegacion">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido-admin">
+        <!-- Sección Dashboard -->
+        <section id="seccionDashboard" class="seccion-admin">
+            <div class="grid-admin">
+                <!-- Panel de gestión de servicios -->
+                <div class="panel-admin">
+                    <h2 class="titulo-panel">Manage Services</h2>
+                    <div class="botones-gestion">
+                        <button class="boton-descargar" onclick="mostrarFormularioServicio('agregar')">
+                            Add Service
+                        </button>
+                        <button class="boton-descargar" onclick="mostrarSeccion('servicios')">
+                            Update Service
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Panel de actividad de usuarios -->
+                <div class="panel-admin">
+                    <h2 class="titulo-panel">User Activity</h2>
+                    <input type="text" id="buscarUsuarios" class="campo-entrada-admin" placeholder="Search users...">
+                    <div id="listaActividad" class="lista-actividad">
+                        <div class="item-actividad">
+                            <span class="usuario-actividad">John Doe</span>
+                            <span class="accion-actividad">logged in</span>
+                            <span class="tiempo-actividad">2m ago</span>
+                        </div>
+                        <div class="item-actividad">
+                            <span class="usuario-actividad">Jane Smith</span>
+                            <span class="accion-actividad">updated profile</span>
+                            <span class="tiempo-actividad">5m ago</span>
+                        </div>
+                        <div class="item-actividad">
+                            <span class="usuario-actividad">Bob Johnson</span>
+                            <span class="accion-actividad">added service</span>
+                            <span class="tiempo-actividad">10m ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de reportes -->
+            <div class="panel-reportes">
+                <h2 class="titulo-panel">Generate Reports</h2>
+                <div class="contenedor-reportes">
+                    <div class="seleccion-reporte">
+                        <label for="tipoReporte">Select Report Type:</label>
+                        <select id="tipoReporte" class="selector-reporte">
+                            <option value="service-usage">Service Usage</option>
+                            <option value="user-activity">User Activity</option>
+                            <option value="revenue">Revenue</option>
+                            <option value="performance">Performance</option>
+                        </select>
+                    </div>
+                    <button class="boton-descargar" onclick="generarReporte()">Download</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="seccionServicios" class="seccion-admin oculto">
+            <div class="tabla-servicios">
+                <table class="tabla-admin">
+                    <thead>
+                        <tr>
+                            <th>Service Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaServiciosBody">
+                        <!-- Los servicios se cargan dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección Usuarios -->
+        <section id="seccionUsuarios" class="seccion-admin oculto">
+            <div class="estadisticas-usuarios">
+                <div class="tarjeta-estadistica">
+                    <h4>Total Users</h4>
+                    <span class="numero-estadistica">0</span>
+                </div>
+                <div class="tarjeta-estadistica">
+                    <h4>Active Users</h4>
+                    <span class="numero-estadistica">0</span>
+                </div>
+                <div class="tarjeta-estadistica">
+                    <h4>New This Month</h4>
+                    <span class="numero-estadistica">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Configuración -->
+        <section id="seccionConfiguracion" class="seccion-admin oculto">
+            <div class="formulario-configuracion">
+                <h2 class="titulo-panel">System Configuration</h2>
+                <form id="formularioConfiguracion">
+                    <div class="grupo-configuracion">
+                        <label for="nombreSistema">System Name:</label>
+                        <input type="text" id="nombreSistema" class="campo-entrada-admin" value="ServiceHub">
+                    </div>
+                    <div class="grupo-configuracion">
+                        <label for="emailAdmin">Admin Email:</label>
+                        <input type="email" id="emailAdmin" class="campo-entrada-admin" value="admin@servicehub.com">
+                    </div>
+                    <button type="button" class="boton-admin boton-guardar" onclick="guardarConfiguracion()">
+                        Save Configuration
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para agregar/editar servicios -->
+    <div id="modalAdmin" class="modal-admin oculto">
+        <div class="contenido-modal-admin">
+            <span class="cerrar-modal" onclick="cerrarModalAdmin()">&times;</span>
+            <h3 id="tituloModal" class="titulo-modal">Add New Service</h3>
+
+            <form id="formularioServicioAdmin">
+                <div class="grupo-campo-admin">
+                    <label for="nombreServicioAdmin">Service Name:</label>
+                    <input type="text" id="nombreServicioAdmin" name="nombreServicioAdmin" class="campo-entrada-admin"
+                        required>
+                </div>
+
+                <div class="grupo-campo-admin">
+                    <label for="categoriaServicioAdmin">Category:</label>
+                    <select id="categoriaServicioAdmin" name="categoriaServicioAdmin" class="selector-admin" required>
+                        <option value="">Select Category</option>
+                        <option value="categoria1">Category 1</option>
+                        <option value="categoria2">Category 2</option>
+                    </select>
+                </div>
+
+                <div class="grupo-campo-admin">
+                    <label for="precioServicioAdmin">Price ($):</label>
+                    <input type="number" id="precioServicioAdmin" name="precioServicioAdmin" class="campo-entrada-admin"
+                        min="0" step="0.01" required>
+                </div>
+
+                <div class="grupo-campo-admin">
+                    <label for="descripcionServicioAdmin">Description:</label>
+                    <textarea id="descripcionServicioAdmin" name="descripcionServicioAdmin" class="area-texto-admin"
+                        placeholder="Service description..."></textarea>
+                </div>
+
+                <div class="botones-modal-admin">
+                    <button type="submit" class="boton-admin boton-guardar">Save Service</button>
+                    <button type="button" class="boton-admin boton-cerrar-modal"
+                        onclick="cerrarModalAdmin()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

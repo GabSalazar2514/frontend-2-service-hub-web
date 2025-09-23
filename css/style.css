@@ -1,0 +1,1657 @@
+/* ==========================================
+   ESTILOS GLOBALES - ServiceHub
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Clases utilitarias */
+.oculto {
+    display: none !important;
+}
+
+.contenedor-navegacion {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   ESTILOS DEL ENCABEZADO
+   ========================================== */
+
+.encabezado-principal {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.icono-logo {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.navegacion-principal {
+    display: flex;
+    gap: 2rem;
+}
+
+.enlace-navegacion {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.enlace-navegacion:hover {
+    color: #3498db;
+}
+
+/* ==========================================
+   PÁGINA PRINCIPAL - INDEX
+   ========================================== */
+
+.contenido-principal {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
+.titulo-principal {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.descripcion-principal {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.boton-registro {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+
+
+/* Sección de servicios en la página principal */
+.seccion-servicios {
+    margin-top: 4rem;
+}
+
+.contenedor-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-servicio {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-servicio {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.imagen-profesional {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23667eea"/><circle cx="50" cy="35" r="15" fill="white" opacity="0.3"/><rect x="25" y="60" width="50" height="25" rx="5" fill="white" opacity="0.3"/></svg>');
+}
+
+.imagen-hogar {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f093fb"/><polygon points="50,20 20,50 80,50" fill="white" opacity="0.3"/><rect x="30" y="50" width="40" height="30" fill="white" opacity="0.3"/></svg>');
+}
+
+.imagen-soporte {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%234facfe"/><circle cx="50" cy="50" r="20" fill="white" opacity="0.3"/><path d="M35 50 Q50 30 65 50" stroke="white" stroke-width="3" fill="none" opacity="0.5"/></svg>');
+}
+
+.titulo-servicio {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.descripcion-servicio {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+   ========================================== */
+
+.pie-pagina {
+
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.contenedor-pie {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: rem;
+    padding: 0 20px;
+    /* aquí decides cuánto “se alejan” del borde */
+}
+
+.enlaces-rapidos h3,
+.redes-sociales h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.lista-enlaces {
+    list-style: none;
+}
+
+.enlace-pie {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enlace-pie:hover {
+    color: #3498db;
+}
+
+.iconos-redes {
+    display: flex;
+    gap: 1rem;
+}
+
+.icono-red {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icono-red:hover {
+    transform: scale(1.2);
+}
+
+.derechos-autor {
+    
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #34495e;
+    color: #bdc3c7;
+}
+
+/* ==========================================
+   PÁGINA DE LOGIN
+   ========================================== */
+
+.cuerpo-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.contenedor-login {
+    width: 100%;
+    max-width: 400px;
+}
+
+.tarjeta-login {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.titulo-login {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.grupo-campo {
+    text-align: left;
+}
+
+.etiqueta-campo {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.campo-entrada {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.campo-entrada:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.grupo-enlaces {
+    text-align: right;
+}
+
+.enlace-olvido {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.enlace-olvido:hover {
+    color: #2980b9;
+}
+
+.boton-login {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.boton-login:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.enlace-regreso {
+    margin-top: 2rem;
+}
+
+.enlace-inicio {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.enlace-inicio:hover {
+    color: #2980b9;
+}
+
+/* Modal de recuperación */
+.modal-recuperacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.contenido-modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.botones-modal {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.boton-enviar {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.boton-enviar:hover {
+    background: #229954;
+}
+
+.boton-cancelar {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.boton-cancelar:hover {
+    background: #c0392b;
+}
+
+/* ==========================================
+   PÁGINA DE DETALLE DE SERVICIO
+   ========================================== */
+
+.contenido-servicio {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
+.contenedor-detalle {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.informacion-servicio {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-servicio-grande {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.ilustracion-limpieza {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%234facfe"/><circle cx="150" cy="120" r="40" fill="white" opacity="0.3"/><rect x="80" y="160" width="140" height="80" rx="10" fill="white" opacity="0.3"/><rect x="250" y="80" width="120" height="140" rx="8" fill="white" opacity="0.2"/></svg>');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-servicio-detalle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.descripcion-detallada {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.panel-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.seccion-precios {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-precios {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.opciones-precios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.opcion-precio {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.opcion-precio input[type="radio"] {
+    width: 18px;
+    height: 18px;
+}
+
+.opcion-precio label {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.boton-solicitar {
+    width: 100%;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-solicitar:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+.seccion-resenas {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-resenas {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.lista-resenas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.resena {
+    border-left: 3px solid #3498db;
+    padding-left: 1rem;
+}
+
+.texto-resena {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.autor-resena {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Modal de confirmación */
+.modal-confirmacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.detalles-confirmacion {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.boton-confirmar {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.boton-confirmar:hover {
+    background: #229954;
+}
+
+/* ==========================================
+   PÁGINA DE SERVICIOS (LISTA)
+   ========================================== */
+.titulo-pagina a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.encabezado-servicios {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.contenido-servicios {
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.seccion-busqueda {
+    margin-bottom: 3rem;
+}
+
+.contenedor-busqueda {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.campo-busqueda {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+.campo-busqueda:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.filtros-categoria {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boton-filtro {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #e1e8ed;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.boton-filtro:hover,
+.boton-filtro.activo {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tarjeta-servicio-lista {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tarjeta-servicio-lista:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-web-dev {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200"><rect width="350" height="200" fill="%23667eea"/><rect x="30" y="40" width="290" height="120" rx="8" fill="white" opacity="0.3"/><rect x="50" y="60" width="60" height="8" fill="white" opacity="0.5"/><rect x="50" y="80" width="100" height="8" fill="white" opacity="0.5"/><rect x="50" y="100" width="80" height="8" fill="white" opacity="0.5"/></svg>');
+}
+
+.imagen-graphic-design {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200"><rect width="350" height="200" fill="%23f093fb"/><circle cx="175" cy="100" r="60" fill="white" opacity="0.3"/><polygon points="175,60 145,130 205,130" fill="white" opacity="0.5"/></svg>');
+}
+
+.imagen-digital-marketing {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200"><rect width="350" height="200" fill="%234facfe"/><rect x="50" y="50" width="250" height="100" rx="10" fill="white" opacity="0.3"/><circle cx="100" cy="100" r="20" fill="white" opacity="0.5"/><rect x="140" y="80" width="60" height="8" fill="white" opacity="0.7"/><rect x="140" y="100" width="80" height="8" fill="white" opacity="0.7"/><rect x="140" y="120" width="40" height="8" fill="white" opacity="0.7"/></svg>');
+}
+
+.imagen-cleaning {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200"><rect width="350" height="200" fill="%23a8edea"/><rect x="100" y="60" width="150" height="80" rx="8" fill="white" opacity="0.4"/><circle cx="175" cy="100" r="25" fill="white" opacity="0.6"/><rect x="160" y="40" width="30" height="40" fill="white" opacity="0.5"/></svg>');
+}
+
+.contenido-tarjeta {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.titulo-servicio-lista {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.descripcion-servicio-lista {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.etiqueta-no-disponible {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.imagen-servicio-lista {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.overlay-imagen {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.calificacion-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tiempo-overlay {
+    background: rgba(52, 152, 219, 0.9);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.precio-servicio {
+    font-weight: 600;
+    color: #27ae60;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.boton-ver-detalles {
+    width: 100%;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.boton-ver-detalles:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.mensaje-vacio {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.pie-pagina-servicios {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+/* ==========================================
+   PANEL DE ADMINISTRACIÓN
+   ========================================== */
+
+.encabezado-admin {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-admin {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.icono-admin {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.navegacion-admin {
+    display: flex;
+    gap: 2rem;
+}
+
+.enlace-admin {
+    text-decoration: none;
+    color: #bdc3c7;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.enlace-admin:hover,
+.enlace-admin.activo {
+    background: #34495e;
+    color: white;
+}
+
+.enlace-salir {
+    background: #e74c3c !important;
+}
+
+.enlace-salir:hover {
+    background: #c0392b !important;
+}
+
+.contenido-admin {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+}
+
+.seccion-admin {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grid-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.panel-admin {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-panel {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.botones-gestion {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.boton-admin {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.boton-agregar {
+    background: #27ae60;
+    color: white;
+}
+
+.boton-agregar:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+.boton-actualizar {
+    background: #f39c12;
+    color: white;
+}
+
+.boton-actualizar:hover {
+    background: #d68910;
+    transform: translateY(-2px);
+}
+
+.campo-entrada-admin {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.campo-entrada-admin:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.lista-actividad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.item-actividad {
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-left: 3px solid #3498db;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.panel-reportes {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-reportes {
+    display: flex;
+    gap: 2rem;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.seleccion-reporte {
+    flex: 1;
+    min-width: 200px;
+}
+
+.seleccion-reporte label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.selector-reporte {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    background: white;
+}
+
+.boton-descargar {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.boton-descargar:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Tabla de administración */
+.tabla-servicios {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-admin th {
+    background: #34495e;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.tabla-admin td {
+    padding: 1rem;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.tabla-admin tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.estado-activo {
+    background: #27ae60;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.boton-tabla {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.boton-editar {
+    background: #f39c12;
+    color: white;
+}
+
+.boton-editar:hover {
+    background: #d68910;
+}
+
+.boton-eliminar {
+    background: #e74c3c;
+    color: white;
+}
+
+.boton-eliminar:hover {
+    background: #c0392b;
+}
+
+/* Estadísticas de usuarios */
+.estadisticas-usuarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-estadistica {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tarjeta-estadistica h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.numero-estadistica {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3498db;
+}
+
+/* Formulario de configuración */
+.formulario-configuracion {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.grupo-configuracion {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-configuracion label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.boton-guardar {
+    background: #27ae60;
+    color: white;
+}
+
+.boton-guardar:hover {
+    background: #229954;
+}
+
+/* Modal de administración */
+.modal-admin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.contenido-modal-admin {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.cerrar-modal:hover {
+    color: #e74c3c;
+}
+
+.grupo-campo-admin {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-campo-admin label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.selector-admin {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    background: white;
+}
+
+.area-texto-admin {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.botones-modal-admin {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO
+   ========================================== */
+
+@media (max-width: 768px) {
+    .contenedor-navegacion {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .navegacion-principal,
+    .navegacion-admin {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .titulo-principal {
+        font-size: 2rem;
+    }
+
+    .descripcion-principal {
+        font-size: 1rem;
+    }
+
+    .contenedor-detalle {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .panel-lateral {
+        order: -1;
+    }
+
+    .grid-servicios {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-busqueda {
+        padding: 0 1rem;
+    }
+
+    .filtros-categoria {
+        gap: 0.5rem;
+    }
+
+    .boton-filtro {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .grid-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-reportes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .estadisticas-usuarios {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-pie {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .iconos-redes {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contenido-principal,
+    .contenido-servicio,
+    .contenido-servicios,
+    .contenido-admin {
+        padding: 1rem 10px;
+    }
+
+    .seccion-bienvenida {
+        padding: 2rem 1rem;
+    }
+
+    .tarjeta-login {
+        padding: 2rem 1.5rem;
+    }
+
+    .titulo-login {
+        font-size: 1.5rem;
+    }
+
+    .contenido-modal,
+    .contenido-modal-admin {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .botones-modal {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .boton-enviar,
+    .boton-cancelar,
+    .boton-confirmar {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   ANIMACIONES Y TRANSICIONES
+   ========================================== */
+
+.tarjeta-servicio,
+.tarjeta-servicio-lista,
+.panel-admin,
+.tarjeta-estadistica {
+    animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.boton-registro,
+.boton-login,
+.boton-solicitar,
+.boton-ver-detalles,
+.boton-admin,
+.boton-descargar {
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-registro::before,
+.boton-login::before,
+.boton-solicitar::before,
+.boton-ver-detalles::before,
+.boton-admin::before,
+.boton-descargar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.boton-registro:hover::before,
+.boton-login:hover::before,
+.boton-solicitar:hover::before,
+.boton-ver-detalles:hover::before,
+.boton-admin:hover::before,
+.boton-descargar:hover::before {
+    left: 100%;
+}
+
+/* ==========================================
+   ESTADOS DE CARGA
+   ========================================== */
+
+.cargando {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.cargando::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #3498db;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   MENSAJES DE NOTIFICACIÓN
+   ========================================== */
+
+.notificacion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    z-index: 3000;
+    animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+}
+
+.notificacion.exito {
+    background: #27ae60;
+}
+
+.notificacion.error {
+    background: #e74c3c;
+}
+
+.notificacion.info {
+    background: #3498db;
+}
+
+.notificacion.advertencia {
+    background: #f39c12;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* ==========================================
+   UTILIDADES ADICIONALES
+   ========================================== */
+
+.texto-centrado {
+    text-align: center;
+}
+
+.margen-superior {
+    margin-top: 2rem;
+}
+
+.margen-inferior {
+    margin-bottom: 2rem;
+}
+
+.ancho-completo {
+    width: 100%;
+}
+
+.flex-centrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sombra-suave {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.borde-redondeado {
+    border-radius: 10px;
+}
+
+.transicion-suave {
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   PERSONALIZACIÓN DE SCROLLBARS
+   ========================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+
+    .encabezado-principal,
+    .encabezado-admin,
+    .navegacion-principal,
+    .navegacion-admin,
+    .pie-pagina,
+    .pie-pagina-servicios,
+    .boton-registro,
+    .boton-login,
+    .boton-solicitar,
+    .boton-ver-detalles,
+    .boton-admin,
+    .botones-gestion,
+    .botones-modal,
+    .botones-modal-admin {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: black;
+        background: white;
+    }
+
+    .contenido-principal,
+    .contenido-servicio,
+    .contenido-servicios,
+    .contenido-admin {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tarjeta-servicio,
+    .tarjeta-servicio-lista,
+    .panel-admin {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+}
+
+/* ==========================================
+   DARK MODE SUPPORT
+   ========================================== */
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #1a1a1a;
+        color: #e1e1e1;
+    }
+
+    .tarjeta-servicio,
+    .tarjeta-servicio-lista,
+    .panel-admin,
+    .informacion-servicio,
+    .seccion-precios,
+    .seccion-resenas,
+    .tarjeta-login,
+    .formulario-configuracion,
+    .tabla-servicios {
+        background: #2c2c2c;
+        color: #e1e1e1;
+    }
+
+    .campo-entrada,
+    .campo-busqueda,
+    .campo-entrada-admin,
+    .selector-reporte,
+    .selector-admin,
+    .area-texto-admin {
+        background: #3c3c3c;
+        border-color: #555;
+        color: #e1e1e1;
+    }
+
+    .tabla-admin th {
+        background: #1a1a1a;
+    }
+
+    .tabla-admin td {
+        border-color: #555;
+    }
+
+    .tabla-admin tbody tr:hover {
+        background: #3c3c3c;
+    }
+
+    .item-actividad {
+        background: #3c3c3c;
+    }
+
+    .contenido-modal,
+    .contenido-modal-admin {
+        background: #2c2c2c;
+        color: #e1e1e1;
+    }
+
+    .detalles-confirmacion {
+        background: #3c3c3c;
+    }
+}
