@@ -1,48 +1,3 @@
-// Configurar navegación
-    configurarNavegacionAdmin();
-    
-    // Mostrar sección inicial
-    mostrarSeccion('dashboard');
-    
-    // Configurar event listeners
-    configurarEventListenersAdmin();
-    
-    // Cargar estadísticas iniciales
-    cargarEstadisticasIniciales();
-    
-    // Configurar actualizaciones automáticas
-    configurarActualizacionAutomatica();
-    
-    console.log('Panel de administración inicializado correctamente');
-    mostrarNotificacion('Welcome to ServiceHub Admin Panel', 'exito', 2000);
-}
-
-/**
- * Verifica si el usuario tiene permisos de administrador
- * @returns {boolean} - True si es administrador
- */
-function verificarAutenticacionAdmin() {
-    try {
-        const datosUsuario = localStorage.getItem('servicehub_usuario');
-        if (!datosUsuario) return false;
-        
-        datosAdmin = JSON.parse(datosUsuario);
-        return datosAdmin.rol === 'admin';
-    } catch (error) {
-        console.error('Error verificando autenticación:', error);
-        return false;
-    }
-}
-
-/**
- * Redirige al login si no está autenticado
- */
-function redirigirALogin() {
-    mostrarNotificacion('Access denied. Administrator privileges required.', 'error');
-    setTimeout(() => {
-        window.location.href = 'login.html';
-    }, 2000);
-}
 
 /**
  * Carga datos iniciales del sistema
@@ -117,11 +72,6 @@ function mostrarSeccion(seccion) {
     }
 }
 
-/**
- * Capitaliza la primera letra de una cadena
- * @param {string} str - Cadena a capitalizar
- * @returns {string} - Cadena capitalizada
- */
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -202,10 +152,6 @@ function mostrarMetricasGenerales() {
     actualizarContadoresMetricas(metricas);
 }
 
-/**
- * Actualiza contadores de métricas en la interfaz
- * @param {Object} metricas - Objeto con las métricas
- */
 function actualizarContadoresMetricas(metricas) {
     const contadores = {
         '.contador-usuarios': metricas.totalUsuarios,
@@ -222,11 +168,6 @@ function actualizarContadoresMetricas(metricas) {
     });
 }
 
-/**
- * Anima un contador numérico
- * @param {HTMLElement} elemento - Elemento a animar
- * @param {number} valorFinal - Valor final del contador
- */
 function animarContador(elemento, valorFinal) {
     const valorInicial = 0;
     const duracion = 2000;
@@ -283,11 +224,6 @@ function cargarGestionServicios() {
     tablaBody.innerHTML = filasHTML;
 }
 
-/**
- * Muestra el formulario para agregar/actualizar servicio
- * @param {string} tipo - 'agregar' o 'actualizar'
- * @param {string} idServicio - ID del servicio (solo para actualizar)
- */
 function mostrarFormularioServicio(tipo, idServicio = null) {
     const modal = document.getElementById('modalAdmin');
     const titulo = document.getElementById('tituloModal');
@@ -401,11 +337,6 @@ function validarDatosServicio(datos) {
     return true;
 }
 
-/**
- * Genera un ID único para el servicio
- * @param {string} nombre - Nombre del servicio
- * @returns {string} - ID generado
- */
 function generarIdServicio(nombre) {
     const base = nombre.toLowerCase()
         .replace(/[^a-z0-9\s]/g, '')
@@ -553,10 +484,6 @@ function generarReporte() {
     mostrarNotificacion(`${capitalize(tipoReporte.replace('-', ' '))} report generated`, 'exito');
 }
 
-/**
- * Genera reporte de uso de servicios
- * @returns {Object} - Datos del reporte
- */
 function generarReporteUsoServicios() {
     return {
         fecha: new Date().toISOString(),
@@ -573,10 +500,6 @@ function generarReporteUsoServicios() {
     };
 }
 
-/**
- * Genera reporte de actividad de usuarios
- * @returns {Object} - Datos del reporte
- */
 function generarReporteActividadUsuarios() {
     return {
         fecha: new Date().toISOString(),
@@ -593,10 +516,6 @@ function generarReporteActividadUsuarios() {
     };
 }
 
-/**
- * Genera reporte de ingresos
- * @returns {Object} - Datos del reporte
- */
 function generarReporteIngresos() {
     const ingresosPorMes = {};
     const ingresosPorServicio = {};
@@ -618,10 +537,6 @@ function generarReporteIngresos() {
     };
 }
 
-/**
- * Genera reporte de rendimiento
- * @returns {Object} - Datos del reporte
- */
 function generarReporteRendimiento() {
     return {
         fecha: new Date().toISOString(),
@@ -638,10 +553,6 @@ function generarReporteRendimiento() {
     };
 }
 
-/**
- * Obtiene el servicio más solicitado
- * @returns {Object} - Datos del servicio más popular
- */
 function obtenerServicioMasSolicitado() {
     const conteoServicios = {};
     
@@ -664,11 +575,6 @@ function obtenerServicioMasSolicitado() {
     return null;
 }
 
-/**
- * Descarga un archivo con los datos del reporte
- * @param {Object} datos - Datos del reporte
- * @param {string} nombreArchivo - Nombre del archivo
- */
 function descargarReporte(datos, nombreArchivo) {
     const blob = new Blob([JSON.stringify(datos, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -790,10 +696,6 @@ function configurarActualizacionAutomatica() {
     }, 30000);
 }
 
-/**
- * Calcula los ingresos del mes actual
- * @returns {number} - Ingresos del mes
- */
 function calcularIngresosMes() {
     const mesActual = new Date().getMonth();
     const anoActual = new Date().getFullYear();
@@ -806,11 +708,6 @@ function calcularIngresosMes() {
         .reduce((total, s) => total + (s.precio || 0), 0);
 }
 
-/**
- * Formatea tiempo transcurrido
- * @param {Date} fecha - Fecha a formatear
- * @returns {string} - Tiempo formateado
- */
 function formatearTiempoTranscurrido(fecha) {
     const ahora = new Date();
     const diff = ahora - fecha;
@@ -825,11 +722,6 @@ function formatearTiempoTranscurrido(fecha) {
     return 'Just now';
 }
 
-/**
- * Formatea fecha para mostrar
- * @param {string} fecha - Fecha en formato ISO
- * @returns {string} - Fecha formateada
- */
 function formatearFecha(fecha) {
     return new Date(fecha).toLocaleDateString('en-US', {
         year: 'numeric',
@@ -838,11 +730,6 @@ function formatearFecha(fecha) {
     });
 }
 
-/**
- * Valida formato de email
- * @param {string} email - Email a validar
- * @returns {boolean} - True si es válido
- */
 function validarEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -862,10 +749,6 @@ function guardarDatosAdmin() {
     }
 }
 
-/**
- * Maneja atajos de teclado específicos del admin
- * @param {KeyboardEvent} evento - Evento de teclado
- */
 function manejarAtajosAdmin(evento) {
     // Ctrl + N para nuevo servicio
     if (evento.ctrlKey && evento.key === 'n') {
@@ -950,10 +833,6 @@ function exportarDatosSistema() {
     mostrarNotificacion('System data exported successfully', 'exito');
 }
 
-/**
- * Importa datos del sistema desde archivo
- * @param {Event} evento - Evento de input file
- */
 function importarDatosSistema(evento) {
     const archivo = evento.target.files[0];
     if (!archivo) return;
@@ -987,11 +866,6 @@ function importarDatosSistema(evento) {
     reader.readAsText(archivo);
 }
 
-/**
- * Valida la estructura de datos importados
- * @param {Object} datos - Datos a validar
- * @returns {boolean} - True si son válidos
- */
 function validarDatosImportados(datos) {
     return (
         datos &&
@@ -1071,10 +945,6 @@ function mostrarInfoSistema() {
     document.body.insertAdjacentHTML('beforeend', info);
 }
 
-/**
- * Calcula el uptime del sistema
- * @returns {string} - Tiempo de actividad formateado
- */
 function calcularUptime() {
     const inicioSesion = localStorage.getItem('servicehub_session_start');
     if (inicioSesion) {
@@ -1148,11 +1018,7 @@ function mostrarLogsSistema() {
     document.body.insertAdjacentHTML('beforeend', modalLogs);
 }
 
-/**
- * Registra un log en el sistema
- * @param {string} message - Mensaje del log
- * @param {string} level - Nivel del log (info, warning, error)
- */
+
 function registrarLog(message, level = 'info') {
     const logs = JSON.parse(localStorage.getItem('servicehub_logs') || '[]');
     
@@ -1200,28 +1066,17 @@ function exportarLogs() {
     mostrarNotificacion('Logs exported successfully', 'exito');
 }
 
-/**
- * Cierra modal de información del sistema
- */
+
 function cerrarInfoSistema() {
     const modal = document.querySelector('.modal-info-sistema');
     if (modal) modal.remove();
 }
 
-/**
- * Cierra modal de logs
- */
 function cerrarLogs() {
     const modal = document.querySelector('.modal-logs');
     if (modal) modal.remove();
 }
 
-/**
- * Muestra notificaciones en el panel admin
- * @param {string} mensaje - Mensaje a mostrar
- * @param {string} tipo - Tipo de notificación
- * @param {number} duracion - Duración en milisegundos
- */
 function mostrarNotificacion(mensaje, tipo = 'info', duracion = 3000) {
     // Registrar en logs
     registrarLog(`Notification: ${mensaje}`, tipo === 'error' ? 'error' : 'info');
@@ -1314,11 +1169,7 @@ window.AdminServiceHub = {
     exportarDatosSistema,
     importarDatosSistema,
     reiniciarSistema
-};/**
- * SERVICEHUB - PANEL DE ADMINISTRACIÓN
- * Archivo de lógica JavaScript para el panel administrativo
- * Maneja gestión de servicios, usuarios, reportes y configuración
- */
+};
 
 // ==========================================
 // VARIABLES GLOBALES
@@ -1353,16 +1204,6 @@ const datosSimulados = {
             fechaCreacion: '2024-01-02',
             solicitudes: 8,
             proveedor: 'Creative Design Studio'
-        },
-        {
-            id: 'premium-cleaning',
-            nombre: 'Premium Cleaning',
-            categoria: 'categoria2',
-            precio: 125,
-            estado: 'activo',
-            fechaCreacion: '2024-01-03',
-            solicitudes: 22,
-            proveedor: 'ServiceHub Cleaning Team'
         }
     ],
     usuarios: [
@@ -1412,15 +1253,27 @@ const datosSimulados = {
  */
 function inicializarAdmin() {
     console.log('Inicializando panel de administración ServiceHub');
-    
-    // Verificar autenticación de administrador
-    if (!verificarAutenticacionAdmin()) {
-        redirigirALogin();
-        return;
-    }
-    
     // Cargar datos iniciales
     cargarDatosAdmin();
     
     // Configurar
+
+    // Configurar navegación
+    configurarNavegacionAdmin();
+    
+    // Mostrar sección inicial
+    mostrarSeccion('dashboard');
+    
+    // Configurar event listeners
+    configurarEventListenersAdmin();
+    
+    // Cargar estadísticas iniciales
+    cargarEstadisticasIniciales();
+    
+    // Configurar actualizaciones automáticas
+    configurarActualizacionAutomatica();
+    
+    console.log('Panel de administración inicializado correctamente');
+    mostrarNotificacion('Welcome to ServiceHub Admin Panel', 'exito', 2000);
+
 }

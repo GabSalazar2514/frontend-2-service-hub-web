@@ -67,48 +67,6 @@ const todosLosServicios = [
         ]
     },
     {
-        id: 'premium-cleaning',
-        nombre: 'Premium Cleaning Service',
-        categoria: 'categoria2',
-        precio: 125,
-        descripcion: 'Professional cleaning services with eco-friendly products and exceptional results.',
-        imagen: 'imagen-cleaning',
-        disponible: true,
-        calificacion: 5.0,
-        tiempoEstimado: '2-5 hours',
-        proveedor: 'ServiceHub Cleaning Team',
-        caracteristicas: [
-            'Eco-friendly products',
-            'Deep cleaning',
-            'Flexible scheduling',
-            'Satisfaction guarantee',
-            'Insured team'
-        ],
-        paquetes: {
-            estandar: { nombre: 'Standard Package', precio: 100, descripcion: 'Basic cleaning service including all common areas', duracion: '2-3 hours', incluye: ['General cleaning of all rooms', 'Bathroom sanitization', 'Kitchen cleaning', 'Floor cleaning', 'Basic dusting'] },
-            premium: { nombre: 'Premium Package', precio: 150, descripcion: 'Complete deep cleaning service with premium products', duracion: '4-5 hours', incluye: ['All Standard Package services', 'Deep carpet cleaning', 'Window cleaning (inside)', 'Appliance deep clean', 'Eco-friendly premium products', '30-day satisfaction guarantee'] }
-        }
-    },
-    {
-        id: 'home-repair',
-        nombre: 'Home Repair Services',
-        categoria: 'categoria2',
-        precio: 200,
-        descripcion: 'Professional home repair and maintenance services for all your needs.',
-        imagen: 'imagen-repair',
-        disponible: true,
-        calificacion: 4.6,
-        tiempoEstimado: '1-3 days',
-        proveedor: 'HandyPro Services',
-        caracteristicas: [
-            'Licensed professionals',
-            'Emergency repairs',
-            'Quality materials',
-            'Warranty included',
-            'Free estimates'
-        ]
-    },
-    {
         id: 'consulting',
         nombre: 'Business Consulting',
         categoria: 'categoria1',

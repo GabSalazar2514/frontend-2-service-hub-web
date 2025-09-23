@@ -70,48 +70,6 @@ const serviciosDisponibles = [
         ]
     },
     {
-        id: 'premium-cleaning',
-        nombre: 'Premium Cleaning',
-        categoria: 'categoria2',
-        precio: 125, // Precio promedio entre paquetes
-        descripcion: 'Professional cleaning services with eco-friendly products and exceptional results.',
-        imagen: 'imagen-cleaning',
-        disponible: true,
-        calificacion: 5.0,
-        tiempoEstimado: '2-5 hours',
-        proveedor: 'ServiceHub Cleaning Team',
-        caracteristicas: [
-            'Eco-friendly products',
-            'Deep cleaning',
-            'Flexible scheduling',
-            'Satisfaction guarantee',
-            'Insured team'
-        ],
-        paquetes: {
-            estandar: { nombre: 'Standard', precio: 100 },
-            premium: { nombre: 'Premium', precio: 150 }
-        }
-    },
-    {
-        id: 'home-repair',
-        nombre: 'Home Repair Services',
-        categoria: 'categoria2',
-        precio: 200,
-        descripcion: 'Professional home repair and maintenance services for all your needs.',
-        imagen: 'imagen-repair',
-        disponible: true,
-        calificacion: 4.6,
-        tiempoEstimado: '1-3 days',
-        proveedor: 'HandyPro Services',
-        caracteristicas: [
-            'Licensed professionals',
-            'Emergency repairs',
-            'Quality materials',
-            'Warranty included',
-            'Free estimates'
-        ]
-    },
-    {
         id: 'consulting',
         nombre: 'Business Consulting',
         categoria: 'categoria1',
