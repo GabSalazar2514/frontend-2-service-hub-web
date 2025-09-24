@@ -16,7 +16,7 @@ let serviciosDestacados = [];
 function navegarAServicios() {
     mostrarNotificacion('Redirecting to services...', 'info');
     setTimeout(() => {
-        window.location.href = '../pages/servicios.html';
+        window.location.href = 'pages/servicios.html';
     }, 1000);
 }
 
